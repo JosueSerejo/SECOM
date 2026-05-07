@@ -1,5 +1,6 @@
 :root {
     --neon-blue: #00d4ff;
+    --neon-green-clear: #45faca;
     --neon-orange: #ff6b00;
     --neon-green: #00ff88;
     --dark-bg: #050a12;
@@ -98,7 +99,7 @@ nav {
     font-family: 'Orbitron', sans-serif;
     font-weight: 900;
     font-size: 1.3rem;
-    background: linear-gradient(90deg, var(--neon-blue), var(--neon-green));
+    background: linear-gradient(90deg, var(--neon-blue), var(--neon-green-clear));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     letter-spacing: 2px;
@@ -107,6 +108,12 @@ nav {
 .nav-logo .dot {
     color: var(--neon-orange);
     -webkit-text-fill-color: var(--neon-orange);
+}
+
+.nav-logo img {
+    height: 40px;
+    vertical-align: middle;
+    margin-right: -0.5rem;
 }
 
 .nav-links {
@@ -364,6 +371,7 @@ nav {
     display: inline-flex;
     align-items: center;
     gap: .5rem;
+    z-index: 20;
 }
 
 .btn-blue {
