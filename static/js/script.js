@@ -49,3 +49,23 @@ window.addEventListener('scroll', () => {
     ? 'rgba(5,10,18,0.97)'
     : 'rgba(5,10,18,0.85)';
 });
+
+
+/* Menu sandwich toggle */
+
+const menuToggle = document.querySelector('#mobile-menu');
+const navLinks = document.querySelector('.nav-links');
+
+menuToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+    
+    // Opcional: Animação simples do ícone sanduíche
+    menuToggle.classList.toggle('is-active');
+});
+
+// Fechar o menu ao clicar em um link
+document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+    });
+});
