@@ -1005,6 +1005,76 @@ section {
     font-weight: 700;
 }
 
+.inscricao-body {
+    padding: 2rem;
+}
+
+#form-content h2 {
+    font-family: 'Orbitron', sans-serif;
+    margin-bottom: 1.5rem;
+    color: var(--neon-blue);
+}
+
+#meu-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.group {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+.group label {
+    font-size: .95rem;
+    font-weight: 600;
+    color: var(--text-light);
+}
+
+.group input,
+.group select {
+    width: 100%;
+    padding: 1rem;
+    border-radius: 12px;
+    border: 1px solid rgba(0, 212, 255, 0.2);
+    background: rgba(255, 255, 255, 0.03);
+    color: white;
+    outline: none;
+    font-size: .95rem;
+    transition: .3s;
+}
+
+.group input:focus,
+.group select:focus {
+    border-color: var(--neon-blue);
+    box-shadow: 0 0 0 3px rgba(0, 212, 255, 0.12);
+}
+
+.group select option {
+    background: var(--dark-card);
+    color: white;
+}
+
+.submit-btn {
+    margin-top: 1rem;
+    border: none;
+    padding: 1rem;
+    border-radius: 14px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    background: linear-gradient(90deg, var(--neon-blue), var(--neon-green));
+    color: #000;
+    transition: .3s;
+}
+
+.submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(0, 212, 255, 0.2);
+}
+
 .form-placeholder {
     display: flex;
     flex-direction: column;
