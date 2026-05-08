@@ -69,3 +69,19 @@ document.querySelectorAll('.nav-links a').forEach(link => {
         navLinks.classList.remove('active');
     });
 });
+
+/* Conexão do Google Forms */
+
+const FORM_URL =
+"https://docs.google.com/forms/d/e/1FAIpQLScKlTQu_f74VmnoF0hJyN5ZRAJuC_8u5FmEH5luwzwCu-hydQ/formResponse";
+const form = document.getElementById("meu-form");
+form.addEventListener("submit", async (e) => {
+e.preventDefault();
+const formData = new FormData(form);
+await fetch(FORM_URL, {
+method: "POST",
+mode: "no-cors",
+body: formData
+});
+alert("Formulário enviado!");
+});
