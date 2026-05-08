@@ -11,7 +11,19 @@ form.addEventListener("submit", async (e) => {
         mode: "no-cors",
         body: formData
     });
-    alert("Formulário enviado!");
+
+    const formContent = document.getElementById("form-content");
+    formContent.innerHTML = `
+        <div class="inscricao-sucesso">
+            <div class="sucesso-icon">
+                <i data-lucide="circle-check-big"></i>
+            </div>
+            <h2>Inscrição Realizada!</h2>
+            <p>Sua inscrição na <strong>SECOM 2026</strong> foi confirmada com sucesso.</p>
+            <p class="sucesso-sub">Fique de olho no seu e-mail para mais informações sobre o evento.</p>
+        </div>
+    `;
+    lucide.createIcons();
 });
 
 
