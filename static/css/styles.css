@@ -978,6 +978,23 @@ section {
     flex-wrap: wrap;
 }
 
+@media (min-width: 768px) {
+    .inscricao-header {
+        display: grid;
+        grid-template-columns: auto 1fr auto;
+        align-items: center;
+        flex-wrap: unset;
+    }
+
+    .inscricao-badge {
+        margin-left: 0;
+        width: auto;
+        text-align: right;
+        margin-top: 0;
+        white-space: nowrap;
+    }
+}
+
 .inscricao-header .header-icon {
     font-size: 2rem;
 }
