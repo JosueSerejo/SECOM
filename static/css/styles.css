@@ -1279,6 +1279,74 @@ footer {
     color: var(--neon-green);
 }
 
+/* SUCESSO INSCRIÇÃO */
+.inscricao-sucesso {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 3rem 2rem;
+    gap: 1rem;
+    animation: fadeInUp 0.5s ease forwards;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.sucesso-icon {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    background: rgba(0, 255, 136, 0.1);
+    border: 2px solid rgba(0, 255, 136, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 30px rgba(0, 255, 136, 0.2);
+    margin-bottom: 0.5rem;
+}
+
+.sucesso-icon svg {
+    width: 2rem;
+    height: 2rem;
+    stroke: var(--neon-green);
+}
+
+.inscricao-sucesso h2 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 900;
+    color: var(--neon-green);
+    text-shadow: 0 0 20px rgba(0, 255, 136, 0.4);
+    margin-bottom: 0;
+}
+
+.inscricao-sucesso p {
+    color: var(--text-muted);
+    font-size: 1rem;
+    line-height: 1.7;
+    max-width: 420px;
+}
+
+.inscricao-sucesso p strong {
+    color: var(--text-main);
+}
+
+.sucesso-sub {
+    font-size: 0.88rem !important;
+    color: var(--text-muted);
+}
+
 /* LUCIDE ICONS */
 .btn-icon {
     width: 1rem;
