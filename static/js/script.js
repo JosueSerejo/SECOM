@@ -59,7 +59,7 @@ const navLinks = document.querySelector('.nav-links');
 menuToggle.addEventListener('click', () => {
     navLinks.classList.toggle('active');
     
-    // Opcional: Animação simples do ícone sanduíche
+    // animação simples do ícone sanduíche
     menuToggle.classList.toggle('is-active');
 });
 
@@ -67,5 +67,6 @@ menuToggle.addEventListener('click', () => {
 document.querySelectorAll('.nav-links a').forEach(link => {
     link.addEventListener('click', () => {
         navLinks.classList.remove('active');
+        menuToggle.classList.remove('is-active');
     });
 });
