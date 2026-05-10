@@ -596,6 +596,12 @@ section {
     margin-bottom: .5rem;
 }
 
+.sobre-logo-img {
+    width: 120px;
+    height: auto;
+    filter: drop-shadow(0 0 12px rgba(0, 212, 255, 0.5));
+}
+
 .sobre-hexagon h3 {
     font-family: 'Orbitron', sans-serif;
     font-size: 1.4rem;
