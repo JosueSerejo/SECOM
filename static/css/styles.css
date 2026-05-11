@@ -1283,11 +1283,12 @@ footer {
     margin: 0 auto;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     flex-wrap: wrap;
     gap: 1rem;
     padding-top: 2rem;
     border-top: 1px solid rgba(255, 255, 255, 0.05);
+    text-align: center;
 }
 
 .footer-bottom p {
@@ -1299,20 +1300,32 @@ footer {
     color: var(--neon-blue);
 }
 
-.footer-bottom-links {
-    display: flex;
-    gap: 1.5rem;
-}
-
-.footer-bottom-links a {
-    color: var(--text-muted);
-    font-size: .8rem;
+.dev-link {
+    color: var(--neon-blue);
     text-decoration: none;
-    transition: color .2s;
+    font-weight: 600;
+    transition: color .2s, text-shadow .2s;
 }
 
-.footer-bottom-links a:hover {
+.dev-link:hover {
     color: var(--neon-green);
+    text-shadow: 0 0 8px rgba(0, 255, 136, 0.5);
+}
+
+.footer-col-sub {
+    font-size: .85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--text-main);
+    margin-top: 1.2rem;
+    margin-bottom: .6rem;
+}
+
+.footer-address {
+    color: var(--text-muted);
+    font-size: .82rem;
+    line-height: 1.7;
 }
 
 /* SUCESSO INSCRIÇÃO */
