@@ -661,18 +661,19 @@ section {
 }
 
 .sobre-pills {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: 1fr;
     gap: .6rem;
     margin-top: 1.5rem;
 }
 
 .pill {
-    padding: .4rem .9rem;
+    padding: .7rem .9rem;
     border-radius: 50px;
     font-size: .8rem;
     font-weight: 600;
     letter-spacing: .5px;
+    text-align: center;
 }
 
 .pill-blue {
@@ -1005,6 +1006,15 @@ section {
 }
 
 @media (min-width: 768px) {
+    .sobre-pills {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .pill {
+        font-size: .8rem;
+        font-weight: 400;
+    }
+
     .inscricao-header {
         display: grid;
         grid-template-columns: auto 1fr auto;
@@ -1802,6 +1812,15 @@ footer {
 }
 
 @media (min-width: 1024px) {
+
+    .sobre-pills {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .pill {
+        font-size: .7rem;
+        font-weight: 400;
+    }
 
     .nav-links {
         gap: 2rem;
