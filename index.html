@@ -149,64 +149,76 @@
           reais de mercado.</p>
       </div>
 
-      <div class="speakers-grid">
-        <div class="speaker-card">
-          <div class="speaker-avatar">PA</div>
-          <div class="speaker-name">Palestrante A</div>
-          <div class="speaker-role">Engenheiro de IA</div>
-          <div class="speaker-company">Google Brasil</div>
-          <div class="speaker-tags">
-            <span class="speaker-tag">Machine Learning</span>
-            <span class="speaker-tag">LLMs</span>
+      <div class="carousel-wrapper">
+        <button class="carousel-btn carousel-prev" id="carousel-prev" aria-label="Anterior">&#8592;</button>
+
+        <div class="carousel-viewport">
+          <div class="speakers-track" id="speakers-track">
+
+            <div class="speaker-card">
+              <div class="speaker-avatar">PA</div>
+              <div class="speaker-name">Palestrante A</div>
+              <div class="speaker-role">Engenheiro de IA</div>
+              <div class="speaker-company">Google Brasil</div>
+              <div class="speaker-tags">
+                <span class="speaker-tag">Machine Learning</span>
+                <span class="speaker-tag">LLMs</span>
+              </div>
+            </div>
+
+            <div class="speaker-card">
+              <div class="speaker-avatar avatar-orange">PB</div>
+              <div class="speaker-name">Palestrante B</div>
+              <div class="speaker-role">CTO & Co-Founder</div>
+              <div class="speaker-company">Startup Nordeste</div>
+              <div class="speaker-tags">
+                <span class="speaker-tag">Empreendedorismo</span>
+                <span class="speaker-tag">Cloud</span>
+              </div>
+            </div>
+
+            <div class="speaker-card">
+              <div class="speaker-avatar avatar-green">PC</div>
+              <div class="speaker-name">Palestrante C</div>
+              <div class="speaker-role">Pesquisadora PhD</div>
+              <div class="speaker-company">UFPI / MIT</div>
+              <div class="speaker-tags">
+                <span class="speaker-tag">Computação Quântica</span>
+              </div>
+            </div>
+
+            <div class="speaker-card">
+              <div class="speaker-avatar avatar-purple">PD</div>
+              <div class="speaker-name">Palestrante D</div>
+              <div class="speaker-role">Dev Sênior</div>
+              <div class="speaker-company">Amazon AWS</div>
+              <div class="speaker-tags">
+                <span class="speaker-tag">DevOps</span>
+                <span class="speaker-tag">Kubernetes</span>
+              </div>
+            </div>
+
+            <div class="speaker-card speaker-placeholder">
+              <div class="speaker-avatar">?</div>
+              <div class="speaker-name">Em breve</div>
+              <div class="speaker-role">A confirmar</div>
+              <div class="speaker-company">—</div>
+            </div>
+
+            <div class="speaker-card speaker-placeholder">
+              <div class="speaker-avatar">?</div>
+              <div class="speaker-name">Em breve</div>
+              <div class="speaker-role">A confirmar</div>
+              <div class="speaker-company">—</div>
+            </div>
+
           </div>
         </div>
 
-        <div class="speaker-card">
-          <div class="speaker-avatar avatar-orange">PB</div>
-          <div class="speaker-name">Palestrante B</div>
-          <div class="speaker-role">CTO & Co-Founder</div>
-          <div class="speaker-company">Startup Nordeste</div>
-          <div class="speaker-tags">
-            <span class="speaker-tag">Empreendedorismo</span>
-            <span class="speaker-tag">Cloud</span>
-          </div>
-        </div>
-
-        <div class="speaker-card">
-          <div class="speaker-avatar avatar-green">PC</div>
-          <div class="speaker-name">Palestrante C</div>
-          <div class="speaker-role">Pesquisadora PhD</div>
-          <div class="speaker-company">UFPI / MIT</div>
-          <div class="speaker-tags">
-            <span class="speaker-tag">Computação Quântica</span>
-          </div>
-        </div>
-
-        <div class="speaker-card">
-          <div class="speaker-avatar avatar-purple">PD</div>
-          <div class="speaker-name">Palestrante D</div>
-          <div class="speaker-role">Dev Sênior</div>
-          <div class="speaker-company">Amazon AWS</div>
-          <div class="speaker-tags">
-            <span class="speaker-tag">DevOps</span>
-            <span class="speaker-tag">Kubernetes</span>
-          </div>
-        </div>
-
-        <div class="speaker-card speaker-placeholder">
-          <div class="speaker-avatar">?</div>
-          <div class="speaker-name">Em breve</div>
-          <div class="speaker-role">A confirmar</div>
-          <div class="speaker-company">—</div>
-        </div>
-
-        <div class="speaker-card speaker-placeholder">
-          <div class="speaker-avatar">?</div>
-          <div class="speaker-name">Em breve</div>
-          <div class="speaker-role">A confirmar</div>
-          <div class="speaker-company">—</div>
-        </div>
+        <button class="carousel-btn carousel-next" id="carousel-next" aria-label="Próximo">&#8594;</button>
       </div>
+
+      <div class="carousel-dots" id="carousel-dots"></div>
     </div>
   </section>
 
