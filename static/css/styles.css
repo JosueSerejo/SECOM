@@ -710,17 +710,19 @@ section {
 .carousel-viewport {
     overflow: hidden;
     flex: 1;
+    padding: 20px 12px;
+    margin: -20px -12px;
 }
 
 .speakers-track {
     display: flex;
-    gap: 1.5rem;
+    gap: 1.8rem;
     transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
     will-change: transform;
 }
 
 .speakers-track .speaker-card {
-    flex: 0 0 calc(25% - 1.125rem);
+    flex: 0 0 calc(25% - 1.35rem);
     min-width: 0;
 }
 
@@ -776,6 +778,7 @@ section {
     .speakers-track .speaker-card {
         flex: 0 0 100%;
     }
+
     .carousel-btn {
         width: 40px;
         height: 40px;
@@ -786,7 +789,7 @@ section {
 /* Tablet: 2 cards */
 @media (min-width: 768px) and (max-width: 1023px) {
     .speakers-track .speaker-card {
-        flex: 0 0 calc(50% - 0.75rem);
+        flex: 0 0 calc(50% - 0.9rem);
     }
 }
 
@@ -798,7 +801,6 @@ section {
     text-align: center;
     transition: all .35s;
     position: relative;
-    overflow: hidden;
     cursor: pointer;
 }
 
@@ -879,23 +881,34 @@ section {
 .speaker-company {
     font-size: .8rem;
     color: var(--text-muted);
-    margin-bottom: 1rem;
+    margin-bottom: 1.2rem;
 }
 
-.speaker-tags {
-    display: flex;
-    flex-wrap: wrap;
+.speaker-link {
+    display: inline-flex;
+    align-items: center;
     gap: .4rem;
-    justify-content: center;
+    font-size: .75rem;
+    font-weight: 600;
+    letter-spacing: .5px;
+    text-transform: uppercase;
+    color: var(--neon-blue);
+    text-decoration: none;
+    border: 1px solid rgba(0, 212, 255, 0.3);
+    background: rgba(0, 212, 255, 0.06);
+    padding: .4rem 1rem;
+    border-radius: 50px;
+    transition: all .3s;
 }
 
-.speaker-tag {
-    font-size: .7rem;
-    padding: .2rem .6rem;
-    border-radius: 50px;
-    background: rgba(0, 212, 255, 0.08);
-    color: var(--neon-blue);
-    border: 1px solid rgba(0, 212, 255, 0.2);
+.speaker-link:hover {
+    background: rgba(0, 212, 255, 0.15);
+    box-shadow: 0 0 14px rgba(0, 212, 255, 0.25);
+    transform: translateY(-1px);
+}
+
+.speaker-link svg {
+    flex-shrink: 0;
 }
 
 .speaker-placeholder {
