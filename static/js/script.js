@@ -1,6 +1,11 @@
 /* Particles */
 const container = document.getElementById('particles');
 const colors = ['#00d4ff', '#ff6b00', '#00ff88', '#0099cc', '#ff9500'];
+const footerYear = document.getElementById('footer-year');
+
+if (footerYear) {
+  footerYear.textContent = new Date().getFullYear();
+}
 
 for (let i = 0; i < 40; i++) {
   const p = document.createElement('div');
