@@ -134,6 +134,7 @@ window.addEventListener('scroll', () => {
 
 const menuToggle = document.querySelector('#mobile-menu');
 const navLinks = document.querySelector('.nav-links');
+const navLogo = document.querySelector('.nav-logo');
 
 menuToggle.addEventListener('click', () => {
     navLinks.classList.toggle('active');
@@ -149,3 +150,11 @@ document.querySelectorAll('.nav-links a').forEach(link => {
         menuToggle.classList.remove('is-active');
     });
 });
+<<<<<<< feat-logo-link-home
+
+navLogo?.addEventListener('click', () => {
+    navLinks.classList.remove('active');
+    menuToggle.classList.remove('is-active');
+});
+=======
+>>>>>>> main
