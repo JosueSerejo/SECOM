@@ -70,9 +70,14 @@ for (let i = 0; i < 40; i++) {
     const steps = totalSteps();
     current = ((index % steps) + steps) % steps;
     const visible = getVisible();
-    const cardWidth = cards[0].getBoundingClientRect().width;
-    const gap = 24; // 1.5rem
+
+    // Usa o card para calcular largura + gap dinamicamente
+    const cardEl = cards[0];
+    const cardStyle = window.getComputedStyle(cardEl);
+    const cardWidth = cardEl.offsetWidth;
+    const gap = parseFloat(window.getComputedStyle(track).gap) || 24;
     const offset = current * visible * (cardWidth + gap);
+
     track.style.transform = `translateX(-${offset}px)`;
     updateDots();
   }
@@ -150,11 +155,8 @@ document.querySelectorAll('.nav-links a').forEach(link => {
         menuToggle.classList.remove('is-active');
     });
 });
-<<<<<<< feat-logo-link-home
 
 navLogo?.addEventListener('click', () => {
     navLinks.classList.remove('active');
     menuToggle.classList.remove('is-active');
 });
-=======
->>>>>>> main
