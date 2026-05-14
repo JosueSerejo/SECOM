@@ -160,3 +160,53 @@ navLogo?.addEventListener('click', () => {
     navLinks.classList.remove('active');
     menuToggle.classList.remove('is-active');
 });
+/* Carrossel infinito de patrocinadores */
+(function () {
+  const wrapper = document.querySelector('.sponsors-track-wrapper');
+  const track   = document.getElementById('sponsors-track');
+  if (!track) return;
+
+  const GAP_PX  = 28.8; // 1.8rem em px (assumindo 16px base)
+  const SPEED   = 0.7;  // pixels por frame
+
+  /* 1. Garante que a faixa tenha itens suficientes  */
+  function fillTrack() {
+    const originals = Array.from(track.children);
+    if (!originals.length) return;
+    while (track.scrollWidth < window.innerWidth * 2.5) {
+      originals.forEach(node => track.appendChild(node.cloneNode(true)));
+    }
+  }
+  fillTrack();
+
+  /* 2. Posição atual (px) nunca reseta */
+  let offset = 0;
+  let paused = false;
+
+  wrapper.addEventListener('mouseenter', () => { paused = true;  });
+  wrapper.addEventListener('mouseleave', () => { paused = false; });
+
+  /* 3. Loop principal */
+  function tick() {
+    if (!paused) {
+      offset += SPEED;
+
+      const first = track.firstElementChild;
+      if (first) {
+        const firstRight = first.offsetLeft + first.offsetWidth + GAP_PX;
+        if (firstRight <= offset) {
+          track.appendChild(first);
+
+          offset -= firstRight;
+        }
+      }
+
+      track.style.transform = `translateX(-${offset}px)`;
+    }
+    requestAnimationFrame(tick);
+  }
+
+  requestAnimationFrame(tick);
+
+  window.addEventListener('resize', fillTrack);
+})();
