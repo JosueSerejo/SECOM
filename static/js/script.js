@@ -160,7 +160,29 @@ navLogo?.addEventListener('click', () => {
     navLinks.classList.remove('active');
     menuToggle.classList.remove('is-active');
 });
-/* Carrossel infinito de patrocinadores */
+/* Particles locais do footer */
+(function () {
+  const footerParticles = document.getElementById('footer-particles');
+  if (!footerParticles) return;
+  const fColors = ['#00d4ff', '#ff6b00', '#00ff88', '#0099cc', '#ff9500'];
+  for (let i = 0; i < 25; i++) {
+    const p = document.createElement('div');
+    p.className = 'footer-particle';
+    const size = Math.random() * 3 + 1;
+    const color = fColors[Math.floor(Math.random() * fColors.length)];
+    const dur = Math.random() * 12 + 8;
+    const delay = Math.random() * 15;
+    p.style.cssText = `
+      width:${size}px; height:${size}px;
+      background:${color};
+      box-shadow: 0 0 ${size * 3}px ${color};
+      left:${Math.random() * 100}%;
+      animation-duration:${dur}s;
+      animation-delay:-${delay}s;
+    `;
+    footerParticles.appendChild(p);
+  }
+})();
 (function () {
   const wrapper = document.querySelector('.sponsors-track-wrapper');
   const track   = document.getElementById('sponsors-track');

@@ -1297,6 +1297,29 @@ footer {
     padding: 4rem 2rem 2rem;
     position: relative;
     z-index: 1;
+    overflow: hidden;
+}
+
+/* Particles locais do footer */
+#footer-particles {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.footer-particle {
+    position: absolute;
+    border-radius: 50%;
+    animation: float linear infinite;
+    opacity: 0;
+}
+
+.footer-grid,
+.footer-bottom {
+    position: relative;
+    z-index: 1;
 }
 
 .footer-grid {
@@ -1974,119 +1997,119 @@ footer {
         gap: 3rem;
     }
 }
+
 /*   SEÇÃO PATROCINADORES */
 
 .sponsors-section {
-  padding: 5rem 0;
-  position: relative;
-  z-index: 1;
+    padding: 5rem 0;
+    position: relative;
+    z-index: 1;
+    background: var(--dark-card);
 }
 
 .sponsors-section .container {
-  padding: 0 1.5rem;
+    padding: 0 1.5rem;
 }
 
 .sponsors-track-wrapper {
-  overflow: hidden;
-  position: relative;
-  padding: 0.5rem 0 1rem;
-  mask-image: linear-gradient(
-    to right,
-    transparent 0%,
-    black 8%,
-    black 92%,
-    transparent 100%
-  );
-  -webkit-mask-image: linear-gradient(
-    to right,
-    transparent 0%,
-    black 8%,
-    black 92%,
-    transparent 100%
-  );
+    overflow: hidden;
+    position: relative;
+    padding: 0.5rem 0 1rem;
+    mask-image: linear-gradient(to right,
+            transparent 0%,
+            black 8%,
+            black 92%,
+            transparent 100%);
+    -webkit-mask-image: linear-gradient(to right,
+            transparent 0%,
+            black 8%,
+            black 92%,
+            transparent 100%);
 }
 
 /* O JS move este elemento via transform — sem CSS animation */
 .sponsors-track {
-  display: flex;
-  gap: 1.8rem;
-  width: max-content;
-  will-change: transform;
+    display: flex;
+    gap: 1.8rem;
+    width: max-content;
+    will-change: transform;
 }
 
 .sponsor-logo-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.75rem;
-  background: rgba(10, 22, 40, 0.75);
-  border: 1px solid rgba(0, 212, 255, 0.12);
-  border-radius: 14px;
-  padding: 1.4rem 1.8rem 1rem;
-  min-width: 160px;
-  flex-shrink: 0;
-  transition: border-color 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    background: rgba(10, 22, 40, 0.75);
+    border: 1px solid rgba(0, 212, 255, 0.12);
+    border-radius: 14px;
+    padding: 1.4rem 1.8rem 1rem;
+    min-width: 160px;
+    flex-shrink: 0;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    text-decoration: none;
+    cursor: pointer;
 }
 
 .sponsor-logo-item:hover {
-  border-color: rgba(0, 212, 255, 0.35);
-  box-shadow: 0 0 22px rgba(0, 212, 255, 0.1);
+    border-color: rgba(0, 212, 255, 0.35);
+    box-shadow: 0 0 22px rgba(0, 212, 255, 0.1);
 }
 
 .sponsor-logo-item img {
-  max-width: 110px;
-  max-height: 46px;
-  width: auto;
-  height: auto;
-  object-fit: contain;
-  filter: brightness(0.8) grayscale(0.15);
-  transition: filter 0.3s;
+    max-width: 110px;
+    max-height: 46px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    filter: brightness(0.8) grayscale(0.15);
+    transition: filter 0.3s;
 }
 
 .sponsor-logo-item:hover img {
-  filter: brightness(1) grayscale(0);
+    filter: brightness(1) grayscale(0);
 }
 
 .sponsor-badge {
-  font-size: 0.6rem;
-  font-weight: 700;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  padding: 0.2rem 0.7rem;
-  border-radius: 50px;
-  white-space: nowrap;
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 0.2rem 0.7rem;
+    border-radius: 50px;
+    white-space: nowrap;
 }
 
 .badge-realizacao {
-  background: rgba(0, 255, 136, 0.12);
-  color: var(--neon-green);
-  border: 1px solid rgba(0, 255, 136, 0.3);
+    background: rgba(0, 255, 136, 0.12);
+    color: var(--neon-green);
+    border: 1px solid rgba(0, 255, 136, 0.3);
 }
 
 .badge-patrocinio {
-  background: rgba(0, 212, 255, 0.12);
-  color: var(--neon-blue);
-  border: 1px solid rgba(0, 212, 255, 0.3);
+    background: rgba(0, 212, 255, 0.12);
+    color: var(--neon-blue);
+    border: 1px solid rgba(0, 212, 255, 0.3);
 }
 
 .badge-apoio {
-  background: rgba(255, 107, 0, 0.12);
-  color: var(--neon-orange);
-  border: 1px solid rgba(255, 107, 0, 0.3);
+    background: rgba(255, 107, 0, 0.12);
+    color: var(--neon-orange);
+    border: 1px solid rgba(255, 107, 0, 0.3);
 }
 
 @media (max-width: 768px) {
-  .sponsors-section {
-    padding: 3.5rem 0;
-  }
+    .sponsors-section {
+        padding: 3.5rem 0;
+    }
 
-  .sponsor-logo-item {
-    min-width: 130px;
-    padding: 1.1rem 1.3rem 0.8rem;
-  }
+    .sponsor-logo-item {
+        min-width: 130px;
+        padding: 1.1rem 1.3rem 0.8rem;
+    }
 
-  .sponsor-logo-item img {
-    max-width: 90px;
-    max-height: 38px;
-  }
+    .sponsor-logo-item img {
+        max-width: 90px;
+        max-height: 38px;
+    }
 }
