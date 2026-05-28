@@ -1,0 +1,19 @@
+.hero-desc {
+    color: var(--neon-blue); 
+    font-size: clamp(1.1rem, 2vw, 1.5rem); 
+    margin-bottom: 1rem; 
+    position: relative; 
+    z-index: 10; 
+    font-weight: 600; 
+    text-align: center;
+}
+
+.themes-card {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.themes-card h4 {
+    text-align: center;
+}
