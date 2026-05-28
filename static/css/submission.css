@@ -157,13 +157,6 @@
     color: var(--text-main);
 }
 
-@media (min-width: 975px) {
-    .accordion {
-        width: 798px;
-    }
-}
-
-
 /* Accordion  */
 .accordion {
     width: 90%;
@@ -227,4 +220,10 @@
 
 .accordion-item.active .accordion-body {
     padding-bottom: 1.5rem;
+}
+
+@media (min-width: 975px) {
+    .accordion {
+        width: 798px;
+    }
 }
