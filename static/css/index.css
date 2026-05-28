@@ -260,12 +260,6 @@
     gap: .6rem;
     margin-top: 1.5rem;
 }
-
-/* PALESTRANTES */
-#palestrantes {
-    background: var(--dark-bg);
-}
-
 /* CAROUSEL */
 .speaker-avatar .avatar-photo {
     width: 100%;
