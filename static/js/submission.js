@@ -1,3 +1,29 @@
+// accordion 
+document.addEventListener('DOMContentLoaded', () => {
+    const accordions = document.querySelectorAll('.accordion-item');
+    
+    accordions.forEach(item => {
+        const header = item.querySelector('.accordion-header');
+        
+        header.addEventListener('click', () => {
+            const isActive = item.classList.contains('active');
+            
+            // Fecha todos os outros accordions
+            accordions.forEach(acc => {
+                acc.classList.remove('active');
+                acc.querySelector('.accordion-body').style.maxHeight = null;
+            });
+            
+            // Abre se não estava ativo
+            if (!isActive) {
+                item.classList.add('active');
+                const body = item.querySelector('.accordion-body');
+                body.style.maxHeight = body.scrollHeight + "px";
+            }
+        });
+    });
+});
+
 /* Carrossel de Áreas */
 (function () {
     const track = document.getElementById('themes-track');
