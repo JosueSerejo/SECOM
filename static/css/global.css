@@ -138,6 +138,13 @@ body {
     margin-right: 2px;
 }
 
+#palestrantes, #diretrizes, #comite {
+    background: var(--dark-bg);
+}
+
+#trabalhos, #themes, #datas {
+    background: var(--dark-card);
+}
 
 /* NAVBAR */
 nav {
@@ -571,10 +578,6 @@ section {
 }
 
 /* TRABALHOS */
-#trabalhos {
-    background: var(--dark-card);
-}
-
 .trabalhos-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
