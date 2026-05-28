@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="./static/img/icon/favicon.ico" type="image/png" />
+    <title>Portal de Submissão | VII SECOM - UESPI</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./static/css/global.css">
+    <link rel="stylesheet" href="./static/css/submission.css">
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+</head>
+<body class="submission-page">
+    <div id="inicio"></div>
+    <div id="particles"></div>
+
+    <nav>
+        <a href="index.html#inicio" class="nav-logo" aria-label="Ir para o topo da página">
+        <img src="./static/img/logo/logosecom26.png" alt="Logo">
+        <span class="nav-logo-text">
+            <span class="nav-logo-line1">VII semana</span>
+            <span class="nav-logo-line2">de computação</span>
+        </span>
+        </a>
+
+        <div class="menu-toggle" id="mobile-menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+        </div>
+
+        <ul class="nav-links">
+        <li><a href="index.html#inicio">Início</a></li>
+        <li><a href="index.html#submission">Submissão</a></li>
+        <li><a href="index.html#themes">Temas</a></li>
+        <li><a href="index.html#diretrizes">Diretrizes</a></li>
+        <li><a href="index.html#datas">Cronograma</a></li>
+        <li><a href="index.html#comite">Comitê</a></li>
+        <li><a href="index.html#faq">FAQ</a></li>
+        <li><a href="index.html#inscricao" class="nav-cta">submeter trabalho</a></li>
+        </ul>
+    </nav>
+
+    <section id="hero" class="submissao-header-spacing">
+        <div class="hero-grid-bg"></div>
+        <div class="hero-glow glow-1"></div>
+        <div class="hero-glow glow-2"></div>
+        <div class="hero-glow glow-3"></div>
+
+        <div class="section-tag tag-blue">Chamada de Trabalhos</div>
+        
+        <h1 class="hero-sub">Portal de Submissão</h1>
+        <h2 class="hero-desc">VII Semana da Computação da Universidade Estadual do Piauí</h2>
+
+        <div class="hero-btns">
+        <a href="#diretrizes" class="btn-primary btn-green"><i data-lucide="book-open" class="btn-icon"></i>Diretrizes</a>
+        <a href="#" class="btn-primary btn-outline"><i data-lucide="external-link" class="btn-icon"></i> Submeter trabalho</a>
+        </div>
+    </section>
+
+    <div class="neon-divider"></div>
+
+    <!-- Tipos de submissão aceitos -->
+    <section id="submission">
+        <h2 class="section-title">Tipos de Submissão Aceitos</h2>
+        
+        <div class="trabalhos-grid" style="margin-top: 3rem;">
+            <div class="trabalho-card tc-blue">
+                <div class="trabalho-icon"><i data-lucide="mic" class="trabalho-lucide-icon"></i></div>
+                <h3>Trabalho Completo</h3>
+                <p>Trabalhos concluídos sobre pesquisas realizadas em um dos tópicos de interesse ou em outros tópicos relacionados a aplicações computacionais.</p>
+                <div class="trabalho-detail">
+                <div class="td-item"><div class="dot dot-blue"></div>Tamanho: 8 a 10 páginas</div>
+                </div>
+            </div>
+
+            <div class="trabalho-card tc-orange">
+                <div class="trabalho-icon"><i data-lucide="layout-template" class="trabalho-lucide-icon"></i></div>
+                <h3>Resumo Expandido</h3>
+                <p>Trabalhos ainda não concluídos, mas com ideias relevantes a serem discutidas e resultados preliminares.</p>
+                <div class="trabalho-detail">
+                <div class="td-item"><div class="dot dot-orange"></div>Tamanho: até 6 páginas</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="neon-divider"></div>
+
+    <!-- Áreas temáticas -->
+    <section id="themes">
+        <h2 class="section-title">Áreas Temáticas</h2>
+        <div class="carousel-wrapper">
+            <button class="carousel-btn carousel-prev" id="carousel-prev" aria-label="Anterior">&#8592;</button>
+
+            <div class="carousel-viewport">
+                <div class="themes-track" id="themes-track">
+                    <div class="themes-card">
+                        <h4>Inteligência Artificial e Dados</h4>
+                        <span class="pill pill-blue">Ciência de Dados</span>
+                        <span class="pill pill-blue">Inteligência Artificial</span>
+                        <span class="pill pill-blue">Mineração de Dados</span>
+                        <span class="pill pill-blue">Otimização</span>
+                        <span class="pill pill-blue">Processamento de Imagens</span>
+                        <span class="pill pill-blue">Reconhecimento de Padrões</span>
+                    </div>
+
+                    <div class="themes-card">
+                        <h4>Infraestrutura e Redes</h4>
+                        <span class="pill pill-orange">Arquitetura de Computadores</span>
+                        <span class="pill pill-orange">Avaliação de Desempenho</span>
+                        <span class="pill pill-orange">Computação em Nuvem</span>
+                        <span class="pill pill-orange">Redes de Computadores</span>
+                        <span class="pill pill-orange">Sistemas Distribuídos</span>
+                        <span class="pill pill-orange">Computação Móvel</span>
+                        <span class="pill pill-orange">Sistemas Operacionais</span>
+                    </div>
+                    
+                    <div class="themes-card">
+                        <h4>Engenharia de Software</h4>
+                        <span class="pill pill-green">Banco de Dados</span>
+                        <span class="pill pill-green">Qualidade de Software</span>
+                        <span class="pill pill-green">Segurança da Informação</span>
+                        <span class="pill pill-green">Sistemas de Informação</span>
+                        <span class="pill pill-green">Sistemas Hipermídia, Multimídia e Web</span>
+                    </div>
+
+                    <div class="themes-card">
+                        <h4>Computação Aplicada</h4>
+                        <span class="pill pill-blue">Bioinformática</span>
+                        <span class="pill pill-blue">Biotecnologia</span>
+                        <span class="pill pill-blue">Computação Aplicada à Saúde</span>
+                        <span class="pill pill-blue">Informática Industrial</span>
+                        <span class="pill pill-blue">Informática Pública</span>
+                    </div>
+
+                    <div class="themes-card">
+                        <h4>Informática e Sociedade</h4>
+                        <span class="pill pill-orange">Análise de Aprendizagem</span>
+                        <span class="pill pill-orange">Educação em Informática</span>
+                        <span class="pill pill-orange">Inclusão Digital</span>
+                        <span class="pill pill-orange">Informática na Educação</span>
+                    </div>
+
+                    <div class="themes-card">
+                        <h4>Interação, Mídia e Jogos</h4>
+                        <span class="pill pill-green">Computação Gráfica</span>
+                        <span class="pill pill-green">Interação Humano-Computador</span>
+                        <span class="pill pill-green">Jogos e Gamificação</span>
+                    </div>
+
+                    <div class="themes-card">
+                        <h4>Sistemas Físicos e Robótica</h4>
+                        <span class="pill pill-blue">Internet das Coisas (IoT)</span>
+                        <span class="pill pill-blue">Robótica</span>
+                    </div>
+
+                    <div class="themes-card">
+                        <h4>Sistemas Físicos e Robótica</h4>
+                        <span class="pill pill-orange">Empreendedorismo e Inovação</span>
+                    </div>
+                    
+                </div>
+            </div>
+
+            <button class="carousel-btn carousel-next" id="carousel-next" aria-label="Próximo">&#8594;</button>
+        </div>
+    </section>
+
+    <div class="neon-divider"></div>
+
+    <!-- Diretrizes e Formatação -->
+    <section id="diretrizes">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag tag-orange">Atenção Autores</span>
+                <h2 class="section-title">Diretrizes e Regras</h2>
+                <p class="section-desc">Leia atentamente as orientações antes de realizar sua submissão.</p>
+            </div>
+
+            <div class="trabalhos-grid">
+                <div class="trabalho-card tc-blue">
+                    <div class="trabalho-icon"><i data-lucide="eye-off" class="trabalho-lucide-icon"></i></div>
+                    <h3>Revisão Cega (Double-Blind)</h3>
+                    <p>Os avaliadores não saberão quem são os autores, e os autores não saberão quem são os avaliadores.</p>
+                    <div class="trabalho-detail" style="margin-top: 1rem;">
+                        <p style="font-size: 0.85rem; color: #fff; margin-bottom: 0.5rem; font-weight: 600;">Para garantir a imparcialidade, você DEVE:</p>
+                        <div class="td-item"><div class="dot dot-blue"></div>Remover nomes/afiliações do documento</div>
+                        <div class="td-item"><div class="dot dot-blue"></div>Remover menções a projetos que identifiquem o grupo</div>
+                        <div class="td-item"><div class="dot dot-blue"></div>Remover autoria nos metadados do PDF</div>
+                    </div>
+                </div>
+
+                <div class="trabalho-card tc-orange">
+                    <div class="trabalho-icon"><i data-lucide="file-badge" class="trabalho-lucide-icon"></i></div>
+                    <h3>Formatação e Templates Oficiais</h3>
+                    <p>Todos os trabalhos devem ser redigidos rigorosamente de acordo com o template oficial. Trabalhos fora do padrão não serão encaminhados para os revisores.</p>
+                    <div class="trabalhos-cta" style="margin-top: 1.5rem; display: flex; flex-direction: column; gap: 0.8rem;">
+                        <a href="./static/docs/sbc_template.doc" class="btn-primary btn-outline" style="font-size: 0.8rem; padding: 0.6rem 1rem;"><i data-lucide="download" class="btn-icon"></i> Baixar Template - Word (.docx)</a>
+                        
+                        <a href="./static/docs/template-latex.zip" class="btn-primary btn-outline" style="font-size: 0.8rem; padding: 0.6rem 1rem;"><i data-lucide="download" class="btn-icon"></i> Baixar Template - LaTeX (.zip)</a>
+                    </div>
+                </div>
+
+                <div class="trabalho-card tc-green">
+                    <div class="trabalho-icon"><i data-lucide="book-open" class="trabalho-lucide-icon"></i></div>
+                    <h3>Composição do Livro Anais</h3>
+                    <p>Todos os artigos aceitos para compor a programação da SECOM 2026, que forem devidamente apresentados durante o evento, serão publicados como Livro Anais da Semana de Computação, pela Editora da Universidade Estadual do Piauí - EdUESPI com registro de selo ISBN e indexados de forma eletrônica no portal de conteúdo da Editora UESPI</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="neon-divider"></div>
+
+    <!-- Datas e cronograma -->
+    <section id="datas">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag tag-green">Agende-se</span>
+                <h2 class="section-title">Cronograma</h2>
+                <p class="section-desc">Fique atento aos prazos do processo de submissão e avaliação.</p>
+            </div>
+
+            <div class="timeline">
+                <div class="timeline-item left">
+                <div class="timeline-content">
+                    <div class="timeline-date">01/06</div>
+                    <div class="timeline-title">Abertura da chamada de submissões</div>
+                </div>
+                </div>
+                <div class="timeline-item right">
+                <div class="timeline-content">
+                    <div class="timeline-date">28/06</div>
+                    <div class="timeline-title">Prazo limite para submissão</div>
+                </div>
+                </div>
+                <div class="timeline-item left">
+                <div class="timeline-content">
+                    <div class="timeline-date">26/07</div>
+                    <div class="timeline-title">Divulgação dos aceites</div>
+                </div>
+                </div>
+                <div class="timeline-item right">
+                <div class="timeline-content">
+                    <div class="timeline-date">09/08</div>
+                    <div class="timeline-title">Prazo para envio da Versão Final</div>
+                </div>
+                </div>
+                <div class="timeline-item left">
+                <div class="timeline-content">
+                    <div class="timeline-date">09/08</div>
+                    <div class="timeline-title">Inscrição dos autores</div>
+                </div>
+                </div>
+                <div class="timeline-item right">
+                <div class="timeline-content">
+                    <div class="timeline-date">17/08 a 19/08</div>
+                    <div class="timeline-title">Semana da Computação</div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- <div class="neon-divider"></div> -->
+
+    <!-- Comitê científico -->
+    <!-- <section id="comite" class="comite">
+        <div class="section-header">
+            <span class="section-tag tag-blue">Quem avalia</span>
+            <h2 class="section-title">Comitê Científico</h2>
+            <p class="section-desc">Conheça os profissionais responsáveis por garantir a qualidade dos trabalhos aprovados.</p>
+        </div>
+
+        <div class="comite-section-container">
+            <div class="coord-comite">
+                <h3 class="section-title" style="font-size: 1.5rem; margin-bottom: 1.5rem; text-align: center;">Coordenação do Comitê</h3>
+                <p>
+                    RODRIGO AUGUSTO ROCHA SOUZA BALUZ - UESPI  
+                    <a style="margin-left: 0.5rem;" href="http://lattes.cnpq.br/7393199222505199" target="_blank" rel="noopener noreferrer">(LATTES)</a>
+                </p>
+            </div>
+            
+            <div class="members-comite">
+                <h3 class="section-title" style="font-size: 1.5rem; margin-bottom: 1.5rem; text-align: center;">Membros do Comitê Científico</h3>
+                <div class="members">
+                    <p>
+                        EYDER FRANCO SOUSA RIOS - UESPI
+                        <a style="margin-left: 0.5rem;" href="http://lattes.cnpq.br/0959807843251616" target="_blank">(LATES)</a>
+                    </p>
+
+                    <p>
+                        ATILA RABELO LOPES - UESPI
+                        <a style="margin-left: 0.5rem;" href="http://lattes.cnpq.br/3644224728277042" target="_blank">(LATES)</a>
+                    </p>
+
+                    <p>
+                        OLIMPIO PEREIRA DE SA NETO - UESPI
+                        <a style="margin-left: 0.5rem;" href="http://lattes.cnpq.br/2968431280770007" target="_blank">(LATES)</a>
+                    </p>
+
+                    <p>
+                        FRANCISCO DAS CHAGAS ROCHA - UESPI
+                        <a style="margin-left: 0.5rem;" href="http://lattes.cnpq.br/8852610569917469" target="_blank">(LATES)</a>
+                    </p>
+
+                    <p>
+                        DARIO BRITO CALÇADA - UESPI
+                        <a style="margin-left: 0.5rem;" href="http://lattes.cnpq.br/4503273905700225" target="_blank">(LATES)</a>
+                    </p>
+
+                    <p>
+                        ARIEL SOARES TELES - IFMA
+                        <a style="margin-left: 0.5rem;" href="http://lattes.cnpq.br/5012476998883237" target="_blank">(LATES)</a>
+                    </p>
+
+                    <p>
+                        JOSÉ VIGNO MOURA SOUSA - UESPI
+                        <a style="margin-left: 0.5rem;" href="http://lattes.cnpq.br/7588197666380941" target="_blank">(LATES)</a>
+                    </p>
+
+                    <p>
+                        RICARDO DE ANDRADE LIRA RABELO - UFPI
+                        <a style="margin-left: 0.5rem;" href="http://lattes.cnpq.br/2263553634422386" target="_blank">(LATES)</a>
+                    </p>
+
+                    <p>
+                        ALCEMIR RODRIGUES SANTOS - UESPI
+                        <a style="margin-left: 0.5rem;" href="http://lattes.cnpq.br/5855202416879547" target="_blank">(LATES)</a>
+                    </p>
+
+                    <p>
+                        EDUILSON LIVIO NEVES DA COSTA CARNEIRO - UFDPAR
+                        <a style="margin-left: 0.5rem;" href="http://lattes.cnpq.br/4903306992284432" target="_blank">(LATES)</a>
+                    </p>
+
+                    <p>
+                        DANIEL LIMA SOUSA - UFDPAR 
+                        <a style="margin-left: 0.5rem;" href="http://lattes.cnpq.br/5909475168124535" target="_blank">(LATES)</a>
+                    </p>
+
+                    <p>
+                        FRANCISCO GERSON AMORIM DE MENESES - IFPI
+                        <a style="margin-left: 0.5rem;" href="http://lattes.cnpq.br/5327908527296762" target="_blank">(LATES)</a>
+                    </p>
+
+                    <p>
+                        ATHANIO DE SOUZA SILVEIRA - IFPI
+                        <a style="margin-left: 0.5rem;" href="http://lattes.cnpq.br/8700816876483064" target="_blank">(LATES)</a>
+                    </p>
+
+                    <p>
+                        ANTONIO SANTOS DE SOUSA - IFPI
+                        <a style="margin-left: 0.5rem;" href="http://lattes.cnpq.br/8911457061547396" target="_blank">(LATES)</a>
+                    </p>
+
+                    <p>
+                        DANILO BORGES DA SILVA - UESPI
+                        <a style="margin-left: 0.5rem;" href="http://lattes.cnpq.br/0764239306213628" target="_blank">(LATES)</a>
+                    </p>
+
+                    <p>
+                        LEINYLSON FONTINELE PEREIRA - UFDPAR
+                        <a style="margin-left: 0.5rem;" href="http://lattes.cnpq.br/5162534649303276" target="_blank">(LATES)</a>
+                    </p>
+
+                    <p>
+                        RICARDO MOURA SEKEFF BUDARUICHE - IFPI
+                        <a style="margin-left: 0.5rem;" href="http://lattes.cnpq.br/6476181389815735" target="_blank">(LATES)</a>
+                    </p>
+
+                    <p>
+                        IALLEN GÁBIO DE SOUSA SANTOS - IFPI
+                        <a style="margin-left: 0.5rem;" href="http://lattes.cnpq.br/7190108546857544" target="_blank">(LATES)</a>
+                    </p>
+
+                    <p>
+                        MAYLLON VERAS DA SILVA - IFPI 
+                        <a style="margin-left: 0.5rem;" href="http://lattes.cnpq.br/8277460240010997" target="_blank">(LATES)</a>
+                    </p>
+
+                    <p>
+                        DENIVAL ARAUJO DOS SANTOS - IFPI
+                        <a style="margin-left: 0.5rem;" href="http://lattes.cnpq.br/5988768531045368" target="_blank">(LATES)</a>
+                    </p>
+
+                    <p>
+                        FABBIO ANDERSON SILVA BORGES - UESPI
+                        <a style="margin-left: 0.5rem;" href="http://lattes.cnpq.br/5378006986523567" target="_blank">((LATES))</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- <div class="neon-divider"></div> -->
+
+    <!-- FAQ -->
+    <!-- <section id="faq">
+        <div class="container">
+        <div class="section-header">
+            <span class="section-tag tag-orange">Dúvidas Frequentes</span>
+            <h2 class="section-title">FAQ</h2>
+            <p class="section-desc">Encontre respostas para as perguntas mais comuns sobre submissão de trabalhos.</p>
+        </div>
+
+        <div class="accordion">
+            <div class="accordion-item">
+            <div class="accordion-header">
+                1. Quem poderá submeter um artigo?
+                <i data-lucide="chevron-down"></i>
+            </div>
+            <div class="accordion-body">
+                <p>A submissão é aberta a toda a comunidade acadêmica e profissional, incluindo estudantes de graduação, pós-graduação, professores, pesquisadores e profissionais do mercado de tecnologia e áreas afins. É encorajada a submissão de trabalhos em coautoria entre alunos e orientadores.</p>
+            </div>
+            </div>
+
+            <div class="accordion-item">
+            <div class="accordion-header">
+                2. Quantos artigos posso submeter?
+                <i data-lucide="chevron-down"></i>
+            </div>
+            <div class="accordion-body">
+                <p>Cada autor poderá submeter até [X] trabalhos como autor principal, não havendo limite para participações como coautor.</p>
+            </div>
+            </div>
+
+            <div class="accordion-item">
+            <div class="accordion-header">
+                3. Quais artigos serão publicados nos anais e e-book?
+                <i data-lucide="chevron-down"></i>
+            </div>
+            <div class="accordion-body">
+                <p>Serão publicados nos anais eletrônicos oficiais do evento apenas os trabalhos que atenderem simultaneamente a três critérios:</p>
+                <ol>
+                <li>Terem sido aprovados pelo Comitê Científico;</li>
+                <li>Terem a versão final (Camera-ready) enviada dentro do prazo estipulado;</li>
+                <li>Serem efetivamente apresentados (oralmente ou em pôster) durante os dias de realização da SECOm.</li>
+                </ol>
+            </div>
+            </div>
+
+            <div class="accordion-item">
+            <div class="accordion-header">
+                4. Quais os requisitos gerais para a formatação do artigo?
+                <i data-lucide="chevron-down"></i>
+            </div>
+            <div class="accordion-body">
+                <ol>
+                <li><strong>Idioma:</strong> Português, Inglês ou Espanhol.</li>
+                <li><strong>Tamanho da página:</strong> A4 (210x297mm).</li>
+                <li><strong>Margens:</strong> Esquerda e direita: 3,0 cm; Superior e inferior: 2,0 cm.</li>
+                <li><strong>Formato de envio:</strong> Os arquivos devem ser enviados em formato .DOCX (Word).</li>
+                </ol>
+            </div>
+            </div>
+
+            <div class="accordion-item">
+            <div class="accordion-header">
+                5. Quais tipos de trabalho posso submeter?
+                <i data-lucide="chevron-down"></i>
+            </div>
+            <div class="accordion-body">
+                <p>A SECOm aceita submissões nas seguintes categorias:</p>
+                <ol>
+                <li><strong>Artigo Resumido (Pôster):</strong> Trabalho mais conciso, com limite máximo de 5 páginas. Foco em pesquisas em andamento ou projetos iniciais. (Espaçamento 1,5, sem espaços entre os parágrafos).</li>
+                <li><strong>Artigo Completo:</strong> Destinado a pesquisas concluídas (Revisão de Literatura ou Pesquisa Empírica/Trabalho de campo). O texto deve ter entre 10 e 15 páginas. (Espaçamento 1,5, sem espaços entre os parágrafos).</li>
+                <li><strong>Relato de Experiência:</strong> Trabalhos que descrevem a vivência prática e os resultados de projetos de extensão, estágios ou implementações no mercado. O texto deve ter entre 10 e 15 páginas. (Espaçamento 1,5, sem espaços entre os parágrafos).</li>
+                </ol>
+            </div>
+            </div>
+
+            <div class="accordion-item">
+            <div class="accordion-header">
+                6. É obrigatório usar o template do evento?
+                <i data-lucide="chevron-down"></i>
+            </div>
+            <div class="accordion-body">
+                <p>Sim. Trabalhos submetidos fora do padrão do template oficial da SECOm, ou que alterem a estrutura base de fontes e margens, serão automaticamente rejeitados na triagem inicial (Desk Reject), sem passar pelo processo de avaliação.</p>
+            </div>
+            </div>
+
+            <div class="accordion-item">
+            <div class="accordion-header">
+                7. Como e quando saberei se meu trabalho foi aceito?
+                <i data-lucide="chevron-down"></i>
+            </div>
+            <div class="accordion-body">
+                <p>O resultado da avaliação (Aceito, Aceito com Ressalvas ou Rejeitado) será enviado para o e-mail do autor correspondente cadastrado no sistema, até a data estipulada no cronograma de Datas Importantes.</p>
+            </div>
+            </div>
+        </div>
+        </div>
+    </section> -->
+
+    <!-- <div class="neon-divider"></div> -->
+
+    <!-- <footer>
+        <div class="footer-grid">
+        <div class="footer-brand">
+            <div class="brand-name">VII SECOM</div>
+            <p>Semana da Computação da UESPI — Conectando estudantes, profissionais e o futuro da tecnologia no Piauí.</p>
+            <div class="footer-socials">
+            <a href="https://instagram.com/tscuespi" class="social-btn" title="Instagram" target="_blank">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                </svg>
+            </a>
+            <a href="mailto:tscuespi@gmail.com" class="social-btn" title="E-mail" target="_blank">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="4" width="20" height="16" rx="2" />
+                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                </svg>
+            </a>
+            <a href="https://uespi.br/tag/curso-superior-em-sistemas-de-computacao/" class="social-btn" title="Site Institucional" target="_blank">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10" />
+                <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20" />
+                <path d="M2 12h20" />
+                </svg>
+            </a>
+            </div>
+        </div>
+
+        <div class="footer-col">
+            <h4>Navegação</h4>
+            <ul>
+            <li><a href="index.html#sobre">Sobre o Evento</a></li>
+            <li><a href="index.html#palestrantes">Palestrantes</a></li>
+            <li><a href="index.html#cronograma-cta">Cronograma</a></li>
+            <li><a href="index.html#trabalhos">Trabalhos</a></li>
+            <li><a href="index.html#inscricao">Inscrições</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-col">
+            <h4>Atividades</h4>
+            <ul>
+            <li><a href="#">Palestras</a></li>
+            <li><a href="#">Minicursos</a></li>
+            <li><a href="portal-submissao.html">Apresentação de Trabalhos</a></li>
+            <li><a href="#">Exposições</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-col">
+            <h4>Contato</h4>
+            <ul>
+            <li><a href="mailto:tscuespi@gmail.com">tscuespi@gmail.com</a></li>
+            </ul>
+            <h4 class="footer-col-sub">Endereço</h4>
+            <p class="footer-address">Av. N. Sra. de Fátima, s/n<br>Bairro N. Sra. de Fátima<br>Parnaíba - PI<br>CEP: 64202-020</p>
+        </div>
+        </div>
+
+        <div class="footer-bottom">
+        <p>&copy; <span id="footer-year"></span> SECOM — UESPI. Desenvolvido por <a href="https://github.com/JosueSerejo" target="_blank" class="dev-link">SerejoDev</a> e <a href="https://github.com/eumarianamota" target="_blank" class="dev-link">Mariana Mota</a>.</p>
+        </div>
+    </footer> -->
+
+
+    <!-- <script src="/submission/static/js/script.js"></script> -->
+    
+    <script>lucide.createIcons();</script>
+    <script src="./static/js/global.js"></script>
+    <script src="./static/js/submission.js"></script>
+</body>
+</html>
