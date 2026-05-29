@@ -315,6 +315,15 @@ nav {
     transform: scale(1.05);
 }
 
+.nav-links .nav-cta::after {
+    display: none !important;
+    content: none !important;
+}
+
+.nav-links .nav-cta:hover {
+    color: #fff !important;
+}
+
 /* HERO */
 #hero {
     position: relative;
