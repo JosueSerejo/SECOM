@@ -1,8 +1,5 @@
-/* ==========================================================================
-   1. ESTILOS BASE / PADRÃO (MOBILE-FIRST)
-   ========================================================================== */
+/*  --- 1. ESTILOS BASE / PADRÃO (MOBILE-FIRST) */
 
-/* SCROLL INDICATOR */
 .scroll-indicator {
     display: flex;
     flex-direction: column;
@@ -20,7 +17,6 @@
     color: var(--neon-blue);
 }
 
-/* HERO LOGO FLUTUANTE */
 .hero-logo-float {
     position: relative;
     margin-top: 2rem;
@@ -502,7 +498,6 @@
     color: var(--text-muted);
 }
 
-/* Hero mobile overrides originais */
 #hero {
     padding: 80px 1.2rem 2rem;
     justify-content: flex-start;
@@ -554,7 +549,6 @@
     margin-bottom: 1.5rem;
 }
 
-/* Sections mobile */
 section {
     padding: 4rem 1.2rem;
 }
@@ -699,11 +693,8 @@ section {
 }
 
 
-/* ==========================================================================
-   2. MEDIA QUERIES (BREAKPOINTS EM MIN-WIDTH)
-   ========================================================================== */
+/* --- 2. MEDIA QUERIES (BREAKPOINTS EM MIN-WIDTH) --- */
 
-/* Max-width temporário mantido apenas para a seção específica de sponsors, como no original */
 @media (max-width: 768px) {
     .sponsors-section {
         padding: 3.5rem 0;
@@ -720,7 +711,6 @@ section {
     }
 }
 
-/* Tablet / Telas Médias */
 @media (min-width: 975px) {
     #hero {
         padding: 90px 2rem 2rem;
@@ -785,7 +775,6 @@ section {
     }
 }
 
-/* Desktops / Telas Grandes */
 @media (min-width: 1024px) {
     .sobre-pills {
         grid-template-columns: repeat(3, 1fr);

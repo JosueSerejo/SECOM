@@ -151,11 +151,8 @@ body {
     background: var(--dark-card);
 }
 
-/* ==========================================================================
-   ESTILOS BASE (MOBILE FIRST)
-   ========================================================================== */
+/* --- ESTILOS BASE --- */
 
-/* NAVBAR (Mobile) */
 nav {
     position: fixed;
     top: 0;
@@ -166,7 +163,6 @@ nav {
     align-items: center;
     justify-content: space-between;
     padding: 0 1.2rem;
-    /* Unificado com o valor mobile */
     height: 70px;
     background: rgba(5, 10, 18, 0.85);
     backdrop-filter: blur(14px);
@@ -230,7 +226,6 @@ nav {
     transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
-/* Menu toggle animação */
 .menu-toggle.is-active .bar:nth-child(1) {
     transform: translateY(8px) rotate(45deg);
 }
@@ -686,7 +681,6 @@ section {
     will-change: transform;
 }
 
-/* Mobile: 1 card por vez (Base) */
 .speakers-track .speaker-card,
 .themes-track,
 .themes-card {
@@ -698,7 +692,6 @@ section {
 .themes-card {
     padding: 1.3rem 1rem;
     position: relative;
-    /* Garantindo contexto para o ::before */
 }
 
 .speaker-card::before,
@@ -984,7 +977,7 @@ section {
     font-family: monospace;
 }
 
-/* FOOTER (Mobile) */
+/* FOOTER */
 footer {
     background: #020509;
     border-top: 1px solid rgba(255, 255, 255, 0.06);
@@ -1134,11 +1127,7 @@ footer {
 }
 
 
-/* ==========================================================================
-   MEDIA QUERIES PROGRESSIVAS (BREAKPOINTS)
-   ========================================================================== */
-
-/* Tablet: 2 cards */
+/* --- MEDIA QUERIES PROGRESSIVAS (BREAKPOINTS) --- */
 @media (min-width: 768px) and (max-width: 1023px) {
 
     .speakers-track .speaker-card,
@@ -1148,7 +1137,6 @@ footer {
     }
 }
 
-/* Telas Médias / Grandes (A partir de 768px) */
 @media (min-width: 768px) {
     .sobre-pills {
         grid-template-columns: repeat(2, 1fr);
@@ -1175,7 +1163,6 @@ footer {
     }
 }
 
-/* Desktop (A partir de 975px) */
 @media (min-width: 975px) {
     nav {
         padding: 0 2rem;
