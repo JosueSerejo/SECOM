@@ -1,19 +1,41 @@
 /* CONTROLE DE LIBERAÇÃO DO FORMULÁRIO */
-// Mude para 'true' para liberar o formulário e esconder o aviso
-const inscricoesAbertas = false; 
+const inscricoesAbertas = false;
 
 document.addEventListener("DOMContentLoaded", () => {
     const avisoBreve = document.getElementById("form-coming-soon");
     const formulario = document.getElementById("meu-form");
 
+    // Elementos do Badge de Status
+    const badgeContainer = document.getElementById("inscricao-status-badge");
+    const badgeDot = document.getElementById("inscricao-status-dot");
+    const badgeText = document.getElementById("inscricao-status-text");
+
     if (inscricoesAbertas) {
         if (avisoBreve) avisoBreve.style.display = "none";
-        if (formulario) formulario.style.display = "flex"; 
+        if (formulario) formulario.style.display = "flex";
+
+        // Status Aberto (Mantém o padrão verde do seu CSS)
+        if (badgeText) badgeText.innerText = "Inscrições Abertas";
     } else {
         if (avisoBreve) avisoBreve.style.display = "block";
         if (formulario) formulario.style.display = "none";
+
+        // Status Fechado (Muda o texto e força a cor vermelha sem mexer no CSS)
+        if (badgeText) badgeText.innerText = "Inscrições não iniciadas";
+        if (badgeDot) {
+            badgeDot.style.background = "#ff3333";
+            badgeDot.style.boxShadow = "0 0 6px #ff3333";
+        }
+        if (badgeContainer) {
+            badgeContainer.style.background = "rgba(255, 51, 51, 0.1)";
+            badgeContainer.style.borderColor = "rgba(255, 51, 51, 0.3)";
+            badgeContainer.style.color = "#ff5555";
+        }
     }
 });
+
+/* CONEXÃO DO GOOGLE FORMS */
+// ... o restante do seu código continua idêntico abaixo
 
 /* CONEXÃO DO GOOGLE FORMS */
 const FORM_URL =
