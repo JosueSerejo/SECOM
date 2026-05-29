@@ -1,12 +1,15 @@
 /* CONTROLE DE LIBERAÇÃO DOS FORMULÁRIOS */
-const inscricoesAbertas = false;
-const submissoesAbertas = true;
+const inscricoesAbertas = false;  // Inscrições do index.html (abrem depois)
+const submissoesAbertas = true;   // Submissões do submission.html (já liberado, fecha primeiro)
 
 document.addEventListener("DOMContentLoaded", () => {
     const formInscricao = document.getElementById("meu-form");
     const isSubmissionPage = document.body.classList.contains("submission-page");
 
     if (isSubmissionPage) {
+        /* ==========================================================================
+           LÓGICA DA PÁGINA DE SUBMISSÃO (submission.html)
+           ========================================================================== */
         const badgeText = document.querySelector("#submission .inscricao-badge");
         
         if (!submissoesAbertas && formInscricao) {
@@ -19,10 +22,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
             formInscricao.style.display = "none";
 
-            const formContainer = formInscricao.parentElement;
+            const formContainer = formInscricao.parentElement; 
             const avisoEncerrado = document.createElement("div");
             avisoEncerrado.className = "embed-notice";
-            avisoEncerrado.id = "form-coming-soon";
+            avisoEncerrado.id = "form-coming-soon"; 
             avisoEncerrado.innerHTML = `
                 <div class="embed-icon">
                     <i data-lucide="calendar-x"></i>
@@ -30,12 +33,14 @@ document.addEventListener("DOMContentLoaded", () => {
                 <h4>Submissões Encerradas!</h4>
                 <p>O prazo para envio de trabalhos para a VII SECOM foi encerrado.</p>
             `;
-
+            
             formContainer.appendChild(avisoEncerrado);
-            lucide.createIcons();
+            lucide.createIcons(); 
         }
     } else {
-
+        /* ==========================================================================
+           LÓGICA DA PÁGINA PRINCIPAL (index.html)
+           ========================================================================== */
         const badgeContainer = document.getElementById("inscricao-status-badge");
         const badgeDot = document.getElementById("inscricao-status-dot");
         const badgeText = document.getElementById("inscricao-status-text");
@@ -76,7 +81,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 });
 
-/* --- CONEXÃO DO GOOGLE FORMS (INDEX.HTML) - MANTIDO INTACTO E PROTEGIDO --- */
+/* ==========================================================================
+   CONEXÃO DO GOOGLE FORMS (INDEX.HTML) - MANTIDO INTACTO E PROTEGIDO
+   ========================================================================== */
 const FORM_URL =
     "https://docs.google.com/forms/d/e/1FAIpQLScKlTQu_f74VmnoF0hJyN5ZRAJuC_8u5FmEH5luwzwCu-hydQ/formResponse";
 const form = document.getElementById("meu-form");
@@ -106,11 +113,53 @@ if (form && !document.body.classList.contains("submission-page")) {
     });
 }
 
-/* --- VALIDAÇÃO DE FORMULÁRIO GENÉRICA (MÁSCARAS E CAMPOS PARA AMBAS AS PÁGINAS) - */
+/* ==========================================================================
+   VALIDAÇÃO DE FORMULÁRIO GENÉRICA E CAMPOS DINÂMICOS
+   ========================================================================== */
 document.addEventListener("DOMContentLoaded", () => {
     const emailInput = document.querySelector('input[type="email"]');
     const telefoneInput = document.querySelector('input[type="tel"]');
     const nomeInput = document.querySelector('input[type="text"]');
+    
+    // Campo de Instituição (Exclusivo do submission.html)
+    const instituicaoSelect = document.querySelector('select[name="entry.701128269"]');
+
+    /* CAMPO DINÂMICO: OUTRA INSTITUIÇÃO */
+    if (instituicaoSelect) {
+        const nameOriginal = "entry.701128269";
+        const groupContainer = instituicaoSelect.parentElement; // Container da div .group
+
+        instituicaoSelect.addEventListener("change", (e) => {
+            let extraInput = document.getElementById("instituicao-outro-input");
+
+            if (e.target.value === "Outra") {
+                // Se o input ainda não existir, cria ele
+                if (!extraInput) {
+                    extraInput = document.createElement("input");
+                    extraInput.type = "text";
+                    extraInput.id = "instituicao-outro-input";
+                    extraInput.placeholder = "Digite o nome da sua instituição";
+                    extraInput.required = true;
+                    extraInput.style.marginTop = "0.8rem"; // Mantém o espaçamento visual do seu CSS
+                    
+                    groupContainer.appendChild(extraInput);
+                }
+                
+                // Transfere o name para o input de texto para enviar o valor digitado
+                instituicaoSelect.removeAttribute("name");
+                extraInput.name = nameOriginal;
+                extraInput.focus();
+
+            } else {
+                // Se escolheu outra opção válida, remove o input de texto se ele existir
+                if (extraInput) {
+                    extraInput.remove();
+                }
+                // Devolve o name original para o select
+                instituicaoSelect.name = nameOriginal;
+            }
+        });
+    }
 
     /* MÁSCARA TELEFONE */
     if (telefoneInput) {
