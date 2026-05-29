@@ -291,7 +291,6 @@ nav {
     background: var(--neon-blue);
     transition: width .3s;
     box-shadow: 0 0 8px var(--neon-blue);
-    display: none;
 }
 
 .nav-links a:hover {
@@ -1187,6 +1186,10 @@ footer {
         gap: 1.5rem;
     }
 
+    .nav-links a:hover::after {
+        width: 100%;
+    }
+
     .nav-links li {
         width: auto;
     }
@@ -1210,6 +1213,8 @@ footer {
         text-align: left;
     }
 
+    
+    
     .carousel-btn {
         width: 48px;
         height: 48px;
