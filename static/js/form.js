@@ -1,8 +1,25 @@
-/* CONEXÃO DO GOOGLE FORMS */
+/* CONTROLE DE LIBERAÇÃO DO FORMULÁRIO */
+// Mude para 'true' para liberar o formulário e esconder o aviso
+const inscricoesAbertas = false; 
 
+document.addEventListener("DOMContentLoaded", () => {
+    const avisoBreve = document.getElementById("form-coming-soon");
+    const formulario = document.getElementById("meu-form");
+
+    if (inscricoesAbertas) {
+        if (avisoBreve) avisoBreve.style.display = "none";
+        if (formulario) formulario.style.display = "flex"; 
+    } else {
+        if (avisoBreve) avisoBreve.style.display = "block";
+        if (formulario) formulario.style.display = "none";
+    }
+});
+
+/* CONEXÃO DO GOOGLE FORMS */
 const FORM_URL =
     "https://docs.google.com/forms/d/e/1FAIpQLScKlTQu_f74VmnoF0hJyN5ZRAJuC_8u5FmEH5luwzwCu-hydQ/formResponse";
 const form = document.getElementById("meu-form");
+
 form.addEventListener("submit", async (e) => {
     e.preventDefault();
     const formData = new FormData(form);
