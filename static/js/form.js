@@ -1,137 +1,151 @@
-/* CONTROLE DE LIBERAÇÃO DO FORMULÁRIO */
+/* CONTROLE DE LIBERAÇÃO DOS FORMULÁRIOS */
 const inscricoesAbertas = false;
+const submissoesAbertas = true;
 
 document.addEventListener("DOMContentLoaded", () => {
-    const avisoBreve = document.getElementById("form-coming-soon");
-    const formulario = document.getElementById("meu-form");
+    const formInscricao = document.getElementById("meu-form");
+    const isSubmissionPage = document.body.classList.contains("submission-page");
 
-    // Elementos do Badge de Status
-    const badgeContainer = document.getElementById("inscricao-status-badge");
-    const badgeDot = document.getElementById("inscricao-status-dot");
-    const badgeText = document.getElementById("inscricao-status-text");
+    if (isSubmissionPage) {
+        const badgeText = document.querySelector("#submission .inscricao-badge");
+        
+        if (!submissoesAbertas && formInscricao) {
+            if (badgeText) {
+                badgeText.innerHTML = `<span class="badge-dot" style="background: #ff3333; box-shadow: 0 0 6px #ff3333;"></span> Submissões Encerradas`;
+                badgeText.style.color = "#ff5555";
+                badgeText.style.background = "rgba(255, 51, 51, 0.1)";
+                badgeText.style.borderColor = "rgba(255, 51, 51, 0.3)";
+            }
 
-    if (inscricoesAbertas) {
-        if (avisoBreve) avisoBreve.style.display = "none";
-        if (formulario) formulario.style.display = "flex";
+            formInscricao.style.display = "none";
 
-        // Status Aberto (Mantém o padrão verde do seu CSS)
-        if (badgeText) badgeText.innerText = "Inscrições Abertas";
-    } else {
-        if (avisoBreve) avisoBreve.style.display = "block";
-        if (formulario) formulario.style.display = "none";
+            const formContainer = formInscricao.parentElement;
+            const avisoEncerrado = document.createElement("div");
+            avisoEncerrado.className = "embed-notice";
+            avisoEncerrado.id = "form-coming-soon";
+            avisoEncerrado.innerHTML = `
+                <div class="embed-icon">
+                    <i data-lucide="calendar-x"></i>
+                </div>
+                <h4>Submissões Encerradas!</h4>
+                <p>O prazo para envio de trabalhos para a VII SECOM foi encerrado.</p>
+            `;
 
-        // Status Fechado (Muda o texto e força a cor vermelha sem mexer no CSS)
-        if (badgeText) badgeText.innerText = "Inscrições não iniciadas";
-        if (badgeDot) {
-            badgeDot.style.background = "#ff3333";
-            badgeDot.style.boxShadow = "0 0 6px #ff3333";
+            formContainer.appendChild(avisoEncerrado);
+            lucide.createIcons();
         }
-        if (badgeContainer) {
-            badgeContainer.style.background = "rgba(255, 51, 51, 0.1)";
-            badgeContainer.style.borderColor = "rgba(255, 51, 51, 0.3)";
-            badgeContainer.style.color = "#ff5555";
+    } else {
+
+        const badgeContainer = document.getElementById("inscricao-status-badge");
+        const badgeDot = document.getElementById("inscricao-status-dot");
+        const badgeText = document.getElementById("inscricao-status-text");
+        const formContainer = document.getElementById("form-content");
+
+        if (inscricoesAbertas) {
+            if (formInscricao) formInscricao.style.display = "flex";
+            if (badgeText) badgeText.innerText = "Inscrições Abertas";
+        } else {
+            if (formInscricao) formInscricao.style.display = "none";
+
+            if (badgeText) badgeText.innerText = "Inscrições não iniciadas";
+            if (badgeDot) {
+                badgeDot.style.background = "#ff3333";
+                badgeDot.style.boxShadow = "0 0 6px #ff3333";
+            }
+            if (badgeContainer) {
+                badgeContainer.style.background = "rgba(255, 51, 51, 0.1)";
+                badgeContainer.style.borderColor = "rgba(255, 51, 51, 0.3)";
+                badgeContainer.style.color = "#ff5555";
+            }
+
+            if (formContainer && !document.getElementById("form-coming-soon")) {
+                const avisoBreve = document.createElement("div");
+                avisoBreve.className = "embed-notice";
+                avisoBreve.id = "form-coming-soon";
+                avisoBreve.innerHTML = `
+                    <div class="embed-icon">
+                        <i data-lucide="calendar-clock"></i>
+                    </div>
+                    <h4>Inscrições em Breve!</h4>
+                    <p>O formulário para inscrições na VII SECOM será liberado nos próximos dias. Fique atento ao cronograma do evento!</p>
+                `;
+                formContainer.appendChild(avisoBreve);
+                lucide.createIcons();
+            }
         }
     }
 });
 
-/* CONEXÃO DO GOOGLE FORMS */
-// ... o restante do seu código continua idêntico abaixo
-
-/* CONEXÃO DO GOOGLE FORMS */
+/* --- CONEXÃO DO GOOGLE FORMS (INDEX.HTML) - MANTIDO INTACTO E PROTEGIDO --- */
 const FORM_URL =
     "https://docs.google.com/forms/d/e/1FAIpQLScKlTQu_f74VmnoF0hJyN5ZRAJuC_8u5FmEH5luwzwCu-hydQ/formResponse";
 const form = document.getElementById("meu-form");
 
-form.addEventListener("submit", async (e) => {
-    e.preventDefault();
-    const formData = new FormData(form);
-    await fetch(FORM_URL, {
-        method: "POST",
-        mode: "no-cors",
-        body: formData
-    });
+if (form && !document.body.classList.contains("submission-page")) {
+    form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const formData = new FormData(form);
+        await fetch(FORM_URL, {
+            method: "POST",
+            mode: "no-cors",
+            body: formData
+        });
 
-    const formContent = document.getElementById("form-content");
-    formContent.innerHTML = `
-        <div class="inscricao-sucesso">
-            <div class="sucesso-icon">
-                <i data-lucide="circle-check-big"></i>
+        const formContent = document.getElementById("form-content");
+        formContent.innerHTML = `
+            <div class="inscricao-sucesso">
+                <div class="sucesso-icon">
+                    <i data-lucide="circle-check-big"></i>
+                </div>
+                <h2>Inscrição Realizada!</h2>
+                <p>Sua inscrição na <strong>SECOM 2026</strong> foi confirmada com sucesso.</p>
+                <p class="sucesso-sub">Fique de olho no seu e-mail para mais informações sobre o evento.</p>
             </div>
-            <h2>Inscrição Realizada!</h2>
-            <p>Sua inscrição na <strong>SECOM 2026</strong> foi confirmada com sucesso.</p>
-            <p class="sucesso-sub">Fique de olho no seu e-mail para mais informações sobre o evento.</p>
-        </div>
-    `;
-    lucide.createIcons();
-});
+        `;
+        lucide.createIcons();
+    });
+}
 
-
-/* VALIDAÇÃO DE FORMULÁRIO */
-
+/* --- VALIDAÇÃO DE FORMULÁRIO GENÉRICA (MÁSCARAS E CAMPOS PARA AMBAS AS PÁGINAS) - */
 document.addEventListener("DOMContentLoaded", () => {
-
     const emailInput = document.querySelector('input[type="email"]');
     const telefoneInput = document.querySelector('input[type="tel"]');
     const nomeInput = document.querySelector('input[type="text"]');
 
     /* MÁSCARA TELEFONE */
-    telefoneInput.addEventListener("input", (e) => {
+    if (telefoneInput) {
+        telefoneInput.addEventListener("input", (e) => {
+            let valor = e.target.value.replace(/\D/g, "");
+            valor = valor.substring(0, 11);
 
-        let valor = e.target.value.replace(/\D/g, "");
-
-        valor = valor.substring(0, 11);
-
-        if (valor.length <= 10) {
-
-            valor = valor.replace(
-                /^(\d{2})(\d)/g,
-                "($1) $2"
-            );
-
-            valor = valor.replace(
-                /(\d{4})(\d)/,
-                "$1-$2"
-            );
-
-        } else {
-
-            valor = valor.replace(
-                /^(\d{2})(\d)/g,
-                "($1) $2"
-            );
-
-            valor = valor.replace(
-                /(\d{5})(\d)/,
-                "$1-$2"
-            );
-        }
-
-        e.target.value = valor;
-    });
+            if (valor.length <= 10) {
+                valor = valor.replace(/^(\d{2})(\d)/g, "($1) $2");
+                valor = valor.replace(/(\d{4})(\d)/, "$1-$2");
+            } else {
+                valor = valor.replace(/^(\d{2})(\d)/g, "($1) $2");
+                valor = valor.replace(/(\d{5})(\d)/, "$1-$2");
+            }
+            e.target.value = valor;
+        });
+    }
 
     /* REMOVER NÚMEROS DO NOME */
-    nomeInput.addEventListener("input", (e) => {
-
-        e.target.value = e.target.value.replace(/[0-9]/g, "");
-
-    });
+    if (nomeInput) {
+        nomeInput.addEventListener("input", (e) => {
+            e.target.value = e.target.value.replace(/[0-9]/g, "");
+        });
+    }
 
     /* VALIDAR EMAIL */
-    emailInput.addEventListener("blur", () => {
+    if (emailInput) {
+        emailInput.addEventListener("blur", () => {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-        const emailRegex =
-            /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-        if (!emailRegex.test(emailInput.value)) {
-
-            emailInput.style.border = "2px solid red";
-
-        } else {
-
-            emailInput.style.border = "";
-
-        }
-
-    });
-
+            if (!emailRegex.test(emailInput.value)) {
+                emailInput.style.border = "2px solid red";
+            } else {
+                emailInput.style.border = "";
+            }
+        });
+    }
 });
