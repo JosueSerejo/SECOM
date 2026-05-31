@@ -294,7 +294,7 @@ nav {
     color: var(--neon-blue);
 }
 
-.nav-cta{
+.nav-cta {
     background: linear-gradient(135deg, var(--neon-orange), #ff9500);
     color: #fff !important;
     font-weight: 700 !important;
@@ -307,7 +307,7 @@ nav {
     padding: 0.7rem 1.5rem !important;
 }
 
-.nav-cta:hover{
+.nav-cta:hover {
     box-shadow: 0 0 30px rgba(255, 107, 0, .8) !important;
     transform: scale(1.05);
 }
