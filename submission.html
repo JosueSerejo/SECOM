@@ -490,7 +490,7 @@
 
                             <div class="group">
                                 <label>Instituição de Ensino:</label>
-                                <select name="entry.701128269" required>
+                                <select name="entry.701128269">
                                     <option value="" disabled>Selecionar</option>
                                     <option value="">Outra instituição</option>
                                     <option value="Universidade Federal do Piauí (UFPI)">Universidade Federal do Piauí
@@ -506,7 +506,7 @@
 
                             <div class="group">
                                 <label>Modalidade: </label>
-                                <select name="entry.1033813828" required>
+                                <select name="entry.1033813828">
                                     <option value="" disabled>Selecionar</option>
                                     <option value="Resumo Expandido">Resumo Expandido</option>
                                     <option value="Trabalho Completo">Trabalho Completo</option>
@@ -515,8 +515,8 @@
 
                             <div class="group">
                                 <label>Área Temática</label>
-                                <select name="entry.1013045063" required>
-                                    <option value="" disabled>Selecionar</option>
+                                <select name="entry.1013045063">
+                                    <option value="">Selecionar</option>
                                     <option value="Inteligência Artificial e Dados">Inteligência Artificial e Dados
                                     </option>
                                     <option value="Infraestrutura e Redes">Infraestrutura e Redes</option>
@@ -536,7 +536,7 @@
 
                             <div class="group">
                                 <label>Trabalho</label>
-                                <input type="file" name="entry.1548419701" required>
+                                <input type="file" name="entry.1548419701">
                             </div>
 
                             <button type="submit" class="submit-btn">
@@ -581,7 +581,8 @@
                         <i data-lucide="chevron-down"></i>
                     </div>
                     <div class="accordion-body">
-                        <p>Os autores podem submeter um número ilimitado de trabalhos, tanto na condição de autor principal quanto de coautor.</p>
+                        <p>Cada autor poderá submeter até [X] trabalhos como autor principal, não havendo limite para
+                            participações como coautor.</p>
                     </div>
                 </div>
 
@@ -597,7 +598,7 @@
                             <li>Terem sido aprovados pelo Comitê Científico;</li>
                             <li>Terem a versão final (Camera-ready) enviada dentro do prazo estipulado;</li>
                             <li>Serem efetivamente apresentados (oralmente ou em pôster) durante os dias de realização
-                                da SECOM.</li>
+                                da SECOm.</li>
                         </ol>
                     </div>
                 </div>
@@ -608,7 +609,13 @@
                         <i data-lucide="chevron-down"></i>
                     </div>
                     <div class="accordion-body">
-                        <p>Toda a formatação deve seguir rigorosamente o padrão da Sociedade Brasileira de Computação (SBC), cujo modelo pode ser <a href="/static/docs/sbc_template.doc">Docs</a> ou <a href="/static/docs/template-latex.zip">Latex</a>. Para a submissão, os trabalhos devem ser enviados obrigatoriamente em formato PDF.</p>
+                        <ol>
+                            <li><strong>Idioma:</strong> Português, Inglês ou Espanhol.</li>
+                            <li><strong>Tamanho da página:</strong> A4 (210x297mm).</li>
+                            <li><strong>Margens:</strong> Esquerda e direita: 3,0 cm; Superior e inferior: 2,0 cm.</li>
+                            <li><strong>Formato de envio:</strong> Os arquivos devem ser enviados em formato .DOCX
+                                (Word).</li>
+                        </ol>
                     </div>
                 </div>
 
@@ -618,11 +625,17 @@
                         <i data-lucide="chevron-down"></i>
                     </div>
                     <div class="accordion-body">
-                        <p>A SECOM aceita submissões nas seguintes categorias:</p>
+                        <p>A SECOm aceita submissões nas seguintes categorias:</p>
                         <ol>
                             <li><strong>Artigo Resumido (Pôster):</strong> Trabalho mais conciso, com limite máximo de 5
-                                páginas. Foco em pesquisas em andamento ou projetos iniciais.</li>
-                            <li><strong>Artigo Completo:</strong> Destinado a pesquisas concluídas. O texto deve ter entre 10 e 15 páginas.</li>
+                                páginas. Foco em pesquisas em andamento ou projetos iniciais. (Espaçamento 1,5, sem
+                                espaços entre os parágrafos).</li>
+                            <li><strong>Artigo Completo:</strong> Destinado a pesquisas concluídas (Revisão de
+                                Literatura ou Pesquisa Empírica/Trabalho de campo). O texto deve ter entre 10 e 15
+                                páginas. (Espaçamento 1,5, sem espaços entre os parágrafos).</li>
+                            <li><strong>Relato de Experiência:</strong> Trabalhos que descrevem a vivência prática e os
+                                resultados de projetos de extensão, estágios ou implementações no mercado. O texto deve
+                                ter entre 10 e 15 páginas. (Espaçamento 1,5, sem espaços entre os parágrafos).</li>
                         </ol>
                     </div>
                 </div>
@@ -633,7 +646,9 @@
                         <i data-lucide="chevron-down"></i>
                     </div>
                     <div class="accordion-body">
-                        <p>Sim. A submissão de trabalhos em desacordo com o padrão do template oficial da Sociedade Brasileira de Computação (SBC) resultará em rejeição automática na triagem inicial, não avançando para a fase de avaliação.</p>
+                        <p>Sim. Trabalhos submetidos fora do padrão do template oficial da SECOm, ou que alterem a
+                            estrutura base de fontes e margens, serão automaticamente rejeitados na triagem inicial
+                            (Desk Reject), sem passar pelo processo de avaliação.</p>
                     </div>
                 </div>
 
@@ -643,7 +658,9 @@
                         <i data-lucide="chevron-down"></i>
                     </div>
                     <div class="accordion-body">
-                        <p>O resultado da avaliação será encaminhado para o e-mail do autor correspondente, conforme o prazo estabelecido no cronograma.</p>
+                        <p>O resultado da avaliação (Aceito, Aceito com Ressalvas ou Rejeitado) será enviado para o
+                            e-mail do autor correspondente cadastrado no sistema, até a data estipulada no cronograma de
+                            Datas Importantes.</p>
                     </div>
                 </div>
             </div>
@@ -682,6 +699,14 @@
                             <circle cx="12" cy="12" r="10" />
                             <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20" />
                             <path d="M2 12h20" />
+                        </svg>
+                    </a>
+                    <a href="#" class="social-btn" title="YouTube" target="_blank">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path
+                                d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17" />
+                            <polygon points="10 15 15 12 10 9" />
                         </svg>
                     </a>
                 </div>
