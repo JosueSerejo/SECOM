@@ -141,13 +141,14 @@ body {
 
 #palestrantes,
 #diretrizes,
-#comite {
+#comite{
     background: var(--dark-bg);
 }
 
 #trabalhos,
 #themes,
-#datas {
+#datas,
+#submission {
     background: var(--dark-card);
 }
 
