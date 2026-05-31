@@ -175,6 +175,8 @@
 
             <button class="carousel-btn carousel-next" id="carousel-next" aria-label="Próximo">&#8594;</button>
         </div>
+
+        <div class="carousel-dots" id="carousel-dots"></div>
     </section>
 
     <div class="neon-divider"></div>
@@ -484,16 +486,6 @@
 
                         <form id="meu-form">
 
-                            <!-- <div class="group">
-                            <label>Tipo de Ingresso:</label>
-
-                            <select name="entry.699843615" required>
-                            <option value="">Selecione</option>
-                            <option value="Público Externo">Público Externo</option>
-                            <option value="Aluno da UESPI">Aluno da UESPI</option>
-                            </select>
-                        </div> -->
-
                             <div class="group">
                                 <label>Autor Principal:</label>
 
@@ -514,7 +506,7 @@
 
                             <div class="group">
                                 <label>Cidade - Estado:</label>
-                                <input type="text" name="entry.1485760061" placeholder="Parnaíba-PI" required>
+                                <input type="text" name="entry.1763209583" placeholder="Parnaíba-PI" required>
                             </div>
 
                             <div class="group">
@@ -565,7 +557,7 @@
 
                             <div class="group">
                                 <label>Trabalho</label>
-                                <input type="file" name="entry.1548419701">
+                                <input type="file" id="pdf-file" name="entry.1548419701">
                             </div>
 
                             <button type="submit" class="submit-btn">
