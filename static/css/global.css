@@ -147,8 +147,7 @@ body {
 
 #trabalhos,
 #themes,
-#datas,
-#submission {
+#datas {
     background: var(--dark-card);
 }
 

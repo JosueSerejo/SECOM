@@ -20,6 +20,13 @@
     text-align: center;
 }
 
+#comite {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 100%;
+}
+
 #comite a {
     color: var(--text-main);
 }
@@ -186,13 +193,8 @@
     }
 }
 
-#themes .container {
-    display: flex;
-    flex-direction: column;
-}
-
 @media (min-width: 975px) {
-    .container {
-        max-width: 80%;
+    .accordion {
+        width: 798px;
     }
 }
