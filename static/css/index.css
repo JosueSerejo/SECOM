@@ -414,6 +414,15 @@
     line-height: 1.7;
 }
 
+.btn-primary.disabled {
+    background-color: #cccccc !important;
+    color: #666666 !important;
+    cursor: not-allowed;
+    pointer-events: none;
+    opacity: 0.7;
+    box-shadow: none !important;
+}
+
 /* FOOTER */
 #footer-particles {
     position: absolute;
