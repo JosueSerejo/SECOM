@@ -95,6 +95,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     data.instituicao = formData.get("entry.701128269");
                     data.modalidade = formData.get("entry.1033813828");
                     data.areaTematica = formData.get("entry.1013045063");
+                    data.subarea = formData.get("entry.1725331058");
                     data.titulo = formData.get("entry.1795756907");
 
                     const fileInput = formElement.querySelector('input[type="file"]');
@@ -226,6 +227,72 @@ document.addEventListener("DOMContentLoaded", () => {
         emailInput.addEventListener("blur", () => {
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             emailInput.style.border = !emailRegex.test(emailInput.value) ? "2px solid red" : "";
+        });
+    }
+
+    /* 4. SELEÇÃO DINÂMICA DE SUBÁREAS */
+    const areaSelect = document.getElementById("area-select");
+    const subareaGroup = document.getElementById("subarea-group");
+    const subareaSelect = document.getElementById("subarea-select");
+
+    // Dicionário mapeando cada Área Maior às suas respectivas Subáreas
+    const subareasPorArea = {
+        "Inteligência Artificial e Dados": [
+            "Ciência de Dados", "Inteligência Artificial", "Mineração de Dados",
+            "Otimização", "Processamento de Imagens", "Reconhecimento de Padrões"
+        ],
+        "Infraestrutura e Redes": [
+            "Arquitetura de Computadores", "Avaliação de Desempenho", "Computação em Nuvem",
+            "Redes de Computadores", "Sistemas Distribuídos", "Computação Móvel", "Sistemas Operacionais"
+        ],
+        "Engenharia de Software": [
+            "Banco de Dados", "Qualidade de Software", "Segurança da Informação",
+            "Sistemas de Informação", "Sistemas Hipermídia, Multimídia e Web"
+        ],
+        "Computação Aplicada": [
+            "Bioinformática", "Biotecnologia", "Computação Aplicada à Saúde",
+            "Informática Industrial", "Informática Pública"
+        ],
+        "Informática e Sociedade": [
+            "Análise de Aprendizagem", "Educação em Informática",
+            "Inclusão Digital", "Informática na Educação"
+        ],
+        "Interação, Mídia e Jogos": [
+            "Computação Gráfica", "Interação Humano-Computador", "Jogos e Gamificação"
+        ],
+        "Sistemas Físicos e Robótica": [
+            "Internet das Coisas (IoT)", "Robótica"
+        ],
+        "Empreendedorismo": [
+            "Empreendedorismo e Inovação"
+        ]
+    };
+
+    if (areaSelect && subareaSelect && subareaGroup) {
+        areaSelect.addEventListener("change", (e) => {
+            const areaSelecionada = e.target.value;
+            const subareas = subareasPorArea[areaSelecionada];
+
+            // Limpa as opções anteriores (mantém apenas a primeira desabilitada)
+            subareaSelect.innerHTML = '<option value="" disabled selected>Selecionar subárea</option>';
+
+            if (subareas && subareas.length > 0) {
+                // Popula o select com as subáreas corretas
+                subareas.forEach(subarea => {
+                    const option = document.createElement("option");
+                    option.value = subarea;
+                    option.textContent = subarea;
+                    subareaSelect.appendChild(option);
+                });
+
+                // Exibe o campo e o torna obrigatório
+                subareaGroup.style.display = "flex";
+                subareaSelect.required = true;
+            } else {
+                // Esconde o campo se não houver subárea e remove a obrigatoriedade
+                subareaGroup.style.display = "none";
+                subareaSelect.required = false;
+            }
         });
     }
 });
