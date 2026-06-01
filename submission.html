@@ -170,7 +170,7 @@
                         </div>
 
                         <div class="themes-card">
-                            <h4>Emppreendedorismo</h4>
+                            <h4>Empreendedorismo</h4>
                             <span class="pill pill-orange">Empreendedorismo e Inovação</span>
                         </div>
 
@@ -517,14 +517,14 @@
                                 <label>Instituição de Ensino:</label>
                                 <select name="entry.701128269" required>
                                     <option value="" disabled selected>Selecionar</option>
+                                    <option value="Universidade Estadual do Piauí (UESPI)">Universidade Estadual do
+                                        Piauí (UESPI)</option>
                                     <option value="Universidade Federal do Piauí (UFPI)">Universidade Federal do Piauí
                                         (UFPI)</option>
                                     <option value="Universidade Federal do Delta do Parnaíba (UFDPar)">Universidade
                                         Federal do Delta do Parnaíba (UFDPar)</option>
                                     <option value="Instituto Federal do Piauí (IFPI)">Instituto Federal do Piauí (IFPI)
                                     </option>
-                                    <option value="Universidade Estadual do Piauí (UESPI)">Universidade Estadual do
-                                        Piauí (UESPI)</option>
                                     <option value="Outra">Outra instituição</option>
                                 </select>
                             </div>
@@ -540,7 +540,7 @@
 
                             <div class="group">
                                 <label>Área Temática</label>
-                                <select name="entry.1013045063" required>
+                                <select id="area-select" name="entry.1013045063" required>
                                     <option value="" disabled selected>Selecionar</option>
                                     <option value="Inteligência Artificial e Dados">Inteligência Artificial e Dados
                                     </option>
@@ -551,6 +551,13 @@
                                     <option value="Interação, Mídia e Jogos">Interação, Mídia e Jogos</option>
                                     <option value="Sistemas Físicos e Robótica">Sistemas Físicos e Robótica</option>
                                     <option value="Empreendedorismo">Empreendedorismo</option>
+                                </select>
+                            </div>
+
+                            <div class="group" id="subarea-group" style="display: none;">
+                                <label>Subárea</label>
+                                <select id="subarea-select" name="entry.1725331058">
+                                    <option value="" disabled selected>Selecionar subárea</option>
                                 </select>
                             </div>
 
