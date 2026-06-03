@@ -172,6 +172,17 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     /* 3. VALIDAÇÃO, MÁSCARAS E CAMPOS DINÂMICOS */
+    const pdfInput = document.getElementById("pdf-file");
+    if (pdfInput) {
+        pdfInput.addEventListener("change", function() {
+            const file = this.files[0];
+            if (file && file.type !== "application/pdf") {
+                alert("Atenção: Por favor, selecione apenas arquivos no formato PDF.");
+                this.value = ""; // LIMPA O CAMPO NA HORA
+            }
+        });
+    }
+
     const emailInput = document.querySelector('input[type="email"]');
     const telefoneInput = document.querySelector('input[type="tel"]');
     const autorInput = document.querySelector('input[name="entry.743009220"]');
