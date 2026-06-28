@@ -178,7 +178,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const file = this.files[0];
             if (file && file.type !== "application/pdf") {
                 alert("Atenção: Por favor, selecione apenas arquivos no formato PDF.");
-                this.value = ""; // LIMPA O CAMPO NA HORA
+                this.value = "";
             }
         });
     }
@@ -186,18 +186,18 @@ document.addEventListener("DOMContentLoaded", () => {
     const emailInput = document.querySelector('input[type="email"]');
     const telefoneInput = document.querySelector('input[type="tel"]');
     const autorInput = document.querySelector('input[name="entry.743009220"]');
-    const instituicaoSelect = document.querySelector('select[name="entry.701128269"]');
 
-    if (instituicaoSelect) {
-        const nameOriginal = "entry.701128269";
+    document.querySelectorAll('select.instituicao-select').forEach(instituicaoSelect => {
+        const nameOriginal = instituicaoSelect.name;
         const groupContainer = instituicaoSelect.parentElement;
+
         instituicaoSelect.addEventListener("change", (e) => {
-            let extraInput = document.getElementById("instituicao-outro-input");
+            let extraInput = groupContainer.querySelector(".instituicao-outro-input");
             if (e.target.value === "Outra") {
                 if (!extraInput) {
                     extraInput = document.createElement("input");
                     extraInput.type = "text";
-                    extraInput.id = "instituicao-outro-input";
+                    extraInput.className = "instituicao-outro-input";
                     extraInput.placeholder = "Digite o nome da sua instituição";
                     extraInput.required = true;
                     extraInput.style.marginTop = "0.8rem";
@@ -211,7 +211,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 instituicaoSelect.name = nameOriginal;
             }
         });
-    }
+    });
 
     if (telefoneInput) {
         telefoneInput.addEventListener("input", (e) => {
