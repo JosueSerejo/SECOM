@@ -1,5 +1,5 @@
 /* --- VII SECOM 2026 - CONTROLE DE LIBERAÇÃO DOS FORMULÁRIOS --- */
-const inscricoesAbertas = true;
+const inscricoesAbertas = false;
 const submissoesAbertas = true;
 
 document.addEventListener("DOMContentLoaded", () => {
