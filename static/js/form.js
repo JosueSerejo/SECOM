@@ -1,5 +1,5 @@
 /* --- VII SECOM 2026 - CONTROLE DE LIBERAÇÃO DOS FORMULÁRIOS --- */
-const inscricoesAbertas = true;
+const inscricoesAbertas = false;
 const submissoesAbertas = false;
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
             if (badgeText) badgeText.innerText = "Inscrições Abertas";
         } else {
             if (formElement) formElement.style.display = "none";
-            if (badgeText) badgeText.innerText = "Inscrições não iniciadas";
+            if (badgeText) badgeText.innerText = "Inscrições encerradas";
             if (badgeDot) {
                 badgeDot.style.background = "#ff3333";
                 badgeDot.style.boxShadow = "0 0 6px #ff3333";
@@ -55,8 +55,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 avisoBreve.id = "form-coming-soon";
                 avisoBreve.innerHTML = `
                     <div class="embed-icon"><i data-lucide="calendar-clock"></i></div>
-                    <h4>Inscrições em Breve!</h4>
-                    <p>O formulário para inscrições será liberado nos próximos dias.</p>
+                    <h4>Inscrições encerradas!</h4>
+                    <p>O formulário para inscrições foi encerrado.</p>
                 `;
                 formContainer.appendChild(avisoBreve);
                 lucide.createIcons();
